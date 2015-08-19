@@ -7,7 +7,7 @@ set -o errexit
 set -o nounset
 
 #Un-comment this next line if you want to see exactly what this script is doing
-#set -o xtrace
+set -o xtrace
 
 echo "COMMAND: rechup"
 echo "USAGE: rechup <jar name> \"<command and parameters>\" <output file name>"
