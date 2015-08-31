@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+#Exit the script if any individual command fails
+set -o errexit
+
+#Exit the script if it tries to use any undeclared variables
+set -o nounset
+
+#Un-comment this next line if you want to see exactly what this script is doing
+#set -o xtrace
+
+function printUsage {
+    echo "COMMAND: psme - Lists all processes running as the current user"
+    echo "USAGE: psme"
+}
+
+if [[ $# != 0 ]]
+	then printUsage
+		exit 1
+	else
+	currentUser=$(whoami)
+    ps -aux | grep ${currentUser}
+fi

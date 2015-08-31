@@ -10,7 +10,7 @@ set -o nounset
 #set -o xtrace
 
 function printUsage {
-    echo "COMMAND: runjar"
+    echo "COMMAND: runjar - Runs a jar with hadoop and a bunch of extra options."
     echo "USAGE: runjar <jar name> <whatever else, but don't use quotes>"
 }
 

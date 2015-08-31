@@ -10,7 +10,7 @@ set -o nounset
 #set -o xtrace
 
 function printUsage {
-    echo "COMMAND: rechup"
+    echo "COMMAND: rechup - Runs a jar with hadoop and a bunch of extra options. Output is directed to file."
     echo "USAGE: rechup <jar name> \"<command and parameters in quotes>\" <output file name>"
 }
 

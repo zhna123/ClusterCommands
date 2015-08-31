@@ -7,7 +7,7 @@ set -o errexit
 #set -o xtrace
 
 function printUsage {
-    echo "COMMAND: . hcp"
+    echo "COMMAND: . hcp - Adds a jar in the current folder to the hadoop classpath."
     echo "USAGE: . hcp <jar name>"
     echo "NOTE: This command MUST be run with a \".\" preceding it. Otherwise, it will seem to have no effect."
 }
@@ -18,8 +18,8 @@ if [[ $# != 1 ]]
     	echo "NOTE: This command MUST be run with a \".\" preceding it. Otherwise, it will seem to have no effect."
         currentDirectory=$(pwd)
         currentHadoopClasspath=$(echo "$HADOOP_CLASSPATH")
-        echo "current classpath: ${currentHadoopClasspath}"
+        echo "previou classpath: ${currentHadoopClasspath}"
         export HADOOP_CLASSPATH="${currentHadoopClasspath}:${currentDirectory}"'/'"$1"
         newClasspath=$(echo "$HADOOP_CLASSPATH")
-        echo "classpath is now : ${newClasspath} "
+        echo "current classpath: ${newClasspath} "
 fi

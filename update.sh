@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-git stash
-git pull
+git fetch origin
+git reset --hard origin/master
 chmod +x runjar
 chmod +x rechup
 chmod +x hcp
+chmod +x psme
