@@ -4,6 +4,8 @@ These are some commands I've written to make running stuff on the cluster (manua
 
   - runjar - adds some stuff to the classpath, sets some options, and runs your jar
   - rechup - same as runjar, but uses nohup and sends output to file
+  - . hcp - adds a file in the current folder to the hadoop classpath. Run this with a dot before it or it won't work.
+  - psme - lists all processes running under the current username
 
 
 ### Installation
