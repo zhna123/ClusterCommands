@@ -21,7 +21,8 @@ if [[ $# -lt 1 ]]
         currentDirectory=$(pwd)
         jarname=$1
         shift
-        export HADOOP_CLIENT_OPTS='-XX:MaxPermSize=512m'
-        export HADOOP_CLASSPATH="${currentDirectory}"'/'"${jarname}"
-        hadoop jar ${jarname} -D mapred.child.java.opts="-Xmx6144m -Xms1536M -Xss1M -XX:MaxPermSize=700M" -D mapred.job.map.memory.mb=8000 -D mapred.job.reduce.memory.mb=8000 "$@"
+        export HADOOP_CLIENT_OPTS="-XX:MaxPermSize=512m"
+        export HADOOP_CLASSPATH="${currentDirectory}"/"${jarname}"
+        childOpts="-Xmx6144m -Xms1536M -Xss1M -XX:MaxPermSize=700M"
+        hadoop jar "${jarname}" -D mapred.child.java.opts="${childOpts}" -D mapred.map.java.opts="${childOpts}" -D mapred.reduce.java.opts="${childOpts}" -D mapred.job.map.memory.mb=8000 -D mapred.job.reduce.memory.mb=8000 "$@"
 fi

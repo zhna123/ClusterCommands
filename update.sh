@@ -5,3 +5,4 @@ chmod +x runjar
 chmod +x rechup
 chmod +x hcp
 chmod +x psme
+chmod +x checkspace
