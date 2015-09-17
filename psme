@@ -19,5 +19,5 @@ if [[ $# != 0 ]]
 		exit 1
 	else
 	currentUser=$(whoami)
-    ps -aux | grep ${currentUser}
+    ps -aux | grep "${currentUser}"
 fi
