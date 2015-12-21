@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+#Exit the script if any individual command fails
+set -o errexit
+
+#Exit the script if it tries to use any undeclared variables
+set -o nounset
+
+#Un-comment this next line if you want to see exactly what this script is doing
+#set -o xtrace
+
+function printUsage {
+    echo "COMMAND: copytolocal - attempts to copy a file from your home folder on HDFS to the local filesystem"
+    echo "USAGE: copytolocal <name of file which is in your home folder on HDFS>"
+}
+
+if [[ $# != 1 ]]
+	then printUsage
+		exit 1
+	else
+        hadoop fs -copyToLocal "hdfs:///user/$USER/${1}" .
+fi
+
+#alias copytolocal='hadoop fs -copyToLocal hdfs:///user/mc023219/*.jar .'
