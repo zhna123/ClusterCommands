@@ -7,7 +7,7 @@ set -o errexit
 set -o nounset
 
 #Un-comment this next line if you want to see exactly what this script is doing
-#set -o xtrace
+set -o xtrace
 
 function printUsage {
     echo "COMMAND: copytolocal - attempts to copy a file from your home folder on HDFS to the local filesystem"
@@ -20,5 +20,3 @@ if [[ $# != 1 ]]
 	else
         hadoop fs -copyToLocal "hdfs:///user/$USER/${1}" .
 fi
-
-#alias copytolocal='hadoop fs -copyToLocal hdfs:///user/mc023219/*.jar .'
